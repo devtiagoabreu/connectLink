@@ -1,0 +1,56 @@
+.share-icon {
+  padding: 0px 5px 3.5px 0px;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  color: white !important;
+}
+
+.sharediv {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  padding-bottom: 40px;
+}
+
+  .sharebutton,
+  sharebutton {
+    display: inline-block;
+    text-decoration: none;
+    height: 48px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 18px;
+    width: 48px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0.1px;
+    white-space: wrap;
+    border: solid var(--accentColor) 2px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--button-text-color);
+    background-color: var(--button-background-color);
+   }
+   
+sharebutton:hover,
+.sharebutton:hover {
+  color: #000000 !important;
+  background-color: #FFF; 
+}
+.sharebutton:hover .share-icon {
+  -webkit-filter: invert(100%);
+  -moz-filter: invert(100%);
+  filter: invert(100%);
+}
+
+
+    .sharebutton-mb {
+     display: none;
+    }
+    .sharebutton-img {
+      position: relative;
+      left: 3px;
+      margin-left: auto;
+      margin-right: auto;
+     }
