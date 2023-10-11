@@ -3,20 +3,20 @@
 @section('content')
 
 <div class="conatiner-fluid content-inner mt-n5 py-0">
-    <div class="row">   
-        
+    <div class="row">
+
      <div class="col-lg-12">
         <div class="card   rounded">
             <div class="card-body">
                <div class="row">
-                   <div class="col-sm-12">  
+                   <div class="col-sm-12">
 
                     @foreach($pages as $page)
 
                     <section class='text-gray-400'>
                     <h3 class="mb-4 card-header"><i class="bi bi-brush">{{__('messages.Select a theme')}}</i></h3>
                     <div>
-                    
+
                         @if($errors->any())
                         <div class="alert alert-danger d-flex align-items-center" role="alert">
                             <svg class="bi flex-shrink-0 me-2" width="24" height="24">
@@ -41,7 +41,7 @@
                             <div class="card rounded shadow-lg bg-light aos-init aos-animate" data-aos="fade-up" data-aos-delay="800">
                               <div class="flex-wrap card-header d-flex justify-content-between align-items-center bg-light">
                                 <div class="header-title">
-                                  <h4 class="card-title">{{__('messages.Preview')}}</h4>         
+                                  <h4 class="card-title">{{__('messages.Preview')}}</h4>
                                 </div>
                               </div>
                               <div class="card-body">
@@ -53,7 +53,7 @@
                               </div>
                             </div>
                           </div>
-  
+
                    </div>
                </div>
             </div>
@@ -66,7 +66,7 @@
         <div class="card   rounded">
            <div class="card-body">
               <div class="row">
-                  <div class="col-sm-12">  
+                  <div class="col-sm-12">
                     @if(env('ALLOW_CUSTOM_BACKGROUNDS') == true)
                     <form action="{{ route('themeBackground') }}" enctype="multipart/form-data" method="post">
                         @csrf
@@ -97,19 +97,19 @@
               </div>
            </div>
         </div>
-     </div>  
+     </div>
 
      @if(auth()->user()->role == 'admin')
     <div class="col-lg-12">
         <div class="card   rounded">
            <div class="card-body">
               <div class="row">
-                  <div class="col-sm-12">  
+                  <div class="col-sm-12">
                     <h3 class="mb-4 card-header">{{__('messages.Manage themes')}}</h3>
                     @if(env('ENABLE_THEME_UPDATER') == 'true')
-                    
+
                     <div id="ajax-container">
-                    
+
                         <br><br><br>
                         <div class="accordion">
                             <div class="accordion-item">
@@ -125,12 +125,13 @@
                               </div>
                             </div>
                           </div>
-                    
+
                     </div>
                     <div id="my-lazy-element"></div>
                     @endif
-                    
+
                     <br><br><br>
+                    <!-- COMENTAR ESTE TRECHO DO CÓDIGO PARA RETIRAR A FUNÇÃO DE UPLOAD DE THEMAS (COMENTE A TAG FORM) -->
                     <form action="{{ route('editTheme') }}" enctype="multipart/form-data" method="post">
                         @csrf
                         {{-- <h3>{{__('messages.Upload themes')}}</h3> --}}
@@ -148,16 +149,17 @@
                             <button type="submit" class="btn btn-primary me-md-3 mb-3 mb-md-0">{{__('messages.Upload themes')}}</button>
                             <button class="btn btn-danger me-md-3 mb-3 mb-md-0 delete-themes" title="Delete themes"><a href="{{ url('/admin/theme') }}" class="text-white">{{__('messages.Delete themes')}}</a></button>
                             <button class="btn btn-info download-themes" title="Download more themes"><a href="https://linkstack.org/themes/" target="_blank" class="text-white">{{__('messages.Download themes')}}</a></button>
-                          </div>
+                        </div>
                     </form>
+
                     </details>
                     </div>
                   </div>
               </div>
            </div>
         </div>
-     </div>   
-     @endif 
+     </div>
+     @endif
 
 @endforeach
 
@@ -167,12 +169,12 @@
 $(window).on('load', function() {
     var placeholder = $('#ajax-container');
     var lazyElement = $('#my-lazy-element');
-    
+
     $.ajax({
         url: '../theme-updater',
         success: function(response) {
             placeholder.replaceWith(lazyElement);
-            
+
             lazyElement.html(response);
         }
     });
@@ -225,8 +227,8 @@ $(window).on('load', function() {
                                                         }
                                                     }
                                                     if(isset($themeName)){
-                                                        ?> 
-                                                        
+                                                        ?>
+
                                                         <div class="col-lg-3">
                                                             <div class="card shadow-lg @if($page->theme == $entry) bg-primary @else bg-soft-primary @endif">
                                                                <div class="card-body pb-0">
