@@ -6,6 +6,7 @@ layouts
 
 Editar layout de gerenciamento de Themas
 path: resources/layouts/studio/theme.blade.php
+linha:134
 
 
 
