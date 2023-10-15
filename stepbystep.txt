@@ -6,7 +6,11 @@ layouts
 
 Editar layout de gerenciamento de Themas
 path: resources/layouts/studio/theme.blade.php
-linha:134
+linhas:134
+
+Editar página de configuração do Administrador
+path: resources\views\components\config\config.blade.php
+linhas: 234, 237, 240, 275, 284, 281, 337 a 455
 
 
 

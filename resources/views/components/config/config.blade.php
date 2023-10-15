@@ -155,7 +155,7 @@ input[type=radio] + label {
 }
 </style>
 
-<?php 
+<?php
 function toggle($key){
     $configNames = json_decode(file_get_contents(base_path('config/config-legends.json')));
 	echo '
@@ -170,8 +170,8 @@ function toggle($key){
 	</div></div>
     <input type="hidden" name="_token" value="'.csrf_token().'">
     <script type="text/javascript">
-document.getElementById("'.$key.'-form").addEventListener("change", function() { 
-    this.submit(); 
+document.getElementById("'.$key.'-form").addEventListener("change", function() {
+    this.submit();
 });
 </script>
     </form>
@@ -180,7 +180,7 @@ document.getElementById("'.$key.'-form").addEventListener("change", function() {
 ?>
 
 
-<?php 
+<?php
 function toggle2($key){
     $configNames = json_decode(file_get_contents(base_path('config/config-legends.json')));
 	echo '
@@ -195,8 +195,8 @@ function toggle2($key){
 	</div></div>
     <input type="hidden" name="_token" value="'.csrf_token().'">
     <script type="text/javascript">
-document.getElementById("'.$key.'-form").addEventListener("change", function() { 
-    this.submit(); 
+document.getElementById("'.$key.'-form").addEventListener("change", function() {
+    this.submit();
 });
 </script>
     </form>
@@ -205,7 +205,7 @@ document.getElementById("'.$key.'-form").addEventListener("change", function() {
 ?>
 
 
-<?php 
+<?php
 function text($key){
     $configNames = json_decode(file_get_contents(base_path('config/config-legends.json')));
     $configValue = str_replace('"', "", EnvEditor::getKey($key));
@@ -230,13 +230,14 @@ function text($key){
 <a name="Application"><h2 class="ch2">{{__('messages.Application')}}</h2></a>
 
 @if(!config('linkstack.single_user_mode'))
-{{toggle('ALLOW_REGISTRATION')}}
+<!--  toggle comentado por Tiago  -->
+<!-- {{toggle('ALLOW_REGISTRATION')}} -->
 
+<!--  toggle comentado por Tiago  -->
+<!-- {{toggle2('REGISTER_AUTH')}} -->
 
-{{toggle2('REGISTER_AUTH')}}
-
-
-{{toggle('MANUAL_USER_VERIFICATION')}}
+<!--  toggle comentado por Tiago  -->
+<!--{{toggle('MANUAL_USER_VERIFICATION')}}-->
 @endif
 
 {{text('ADMIN_EMAIL')}}
@@ -270,16 +271,17 @@ foreach($users as $user){if($user->littlelink_name != $configValue2){echo '<opti
 
 {{text('APP_NAME')}}
 
-
-{{toggle('HIDE_VERIFICATION_CHECKMARK')}}
+<!--  toggle comentado por Tiago  -->
+<!-- {{toggle('HIDE_VERIFICATION_CHECKMARK')}} -->
 
 
 <a name="Panel-settings"><h2 class="ch2">{{__('messages.Panel settings')}}</h2></a>
 
-{{toggle('NOTIFY_EVENTS')}}
+<!--  toggle comentado por Tiago  -->
+<!-- {{toggle('NOTIFY_EVENTS')}} -->
 
-
-{{toggle('NOTIFY_UPDATES')}}
+<!--  toggle comentado por Tiago  -->
+<!-- {{toggle('NOTIFY_UPDATES')}} -->
 
 
 {{toggle('ENABLE_BUTTON_EDITOR')}}
@@ -312,9 +314,10 @@ foreach($users as $user){if($user->littlelink_name != $configValue2){echo '<opti
 
 <a name="Advanced"><h2 class="ch2">{{__('messages.Advanced')}}</h2></a>
 
-{{toggle('JOIN_BETA')}}
+<!--  toggle comentado por Tiago  -->
+<!-- {{toggle('JOIN_BETA')}} -->
 
-{{-- start MAINTENANCE_MODE --}}
+<!--  {{-- start MAINTENANCE_MODE --}}
 <form id="MAINTENANCE_MODE-form" action="{{route('editConfig')}}" enctype="multipart/form-data" method="post">
 <div class="form-group col-lg-8">
 <input value="maintenance" name="type" style="display:none;" type="text" class="form-control form-control-lg" required>
@@ -326,14 +329,14 @@ foreach($users as $user){if($user->littlelink_name != $configValue2){echo '<opti
 </div></div>
 <input type="hidden" name="_token" value="{{csrf_token()}}">
 <script type="text/javascript">
-document.getElementById("MAINTENANCE_MODE-form").addEventListener("change", function() { 
-    this.submit(); 
+document.getElementById("MAINTENANCE_MODE-form").addEventListener("change", function() {
+    this.submit();
 });
 </script>
 </form>
 {{-- end MAINTENANCE_MODE --}}
-
-
+-->
+<!--  toggle comentado por Tiago
 {{toggle('SKIP_UPDATE_BACKUP')}}
 
 
@@ -449,7 +452,7 @@ document.getElementById("MAINTENANCE_MODE-form").addEventListener("change", func
 <script type="text/javascript">document.getElementById("debug-form").addEventListener("change", function() { this.submit(); });</script>
 </form>
 {{-- end debug settings --}}
-
+ -->
 {{-- start language --}}
 <a name="Language"><h2 class="ch2">{{__('messages.Language')}}</h2></a>
 <?php $configValue2 = str_replace('"', "", EnvEditor::getKey('LOCALE')); ?>
