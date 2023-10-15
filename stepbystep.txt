@@ -12,5 +12,20 @@ Editar página de configuração do Administrador
 path: resources\views\components\config\config.blade.php
 linhas: 234, 237, 240, 275, 284, 281, 337 a 455
 
+Editar links da página inicial
+path: config\advanced-config.php
+
+
+
+<p><strong><a href="https://atagConnect.com.br/">AtagConnect</a></strong> ConnectLink é uma ferramenta de compartilhamento de  links  vinculados a uma tag RFID. Adquira nosso produto em nossa loja para efetuar login.</p>
+
+<p><strong>Feel free to send us your feedback!</strong></p>
+
+<ul>
+	<li>Join our <a href="https://discord.atagConnect.com.br/">community Discord</a></li>
+	<li>Write us an <a href="mailto:info@atagConnect.com.br?subject=Inquiry%20about%20AtagConnect">email</a></li>
+</ul>
+
+<p>&nbsp;</p>
 
 
