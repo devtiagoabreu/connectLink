@@ -132,7 +132,7 @@
 
                     <br><br><br>
                     <!-- COMENTAR ESTE TRECHO DO CÓDIGO PARA RETIRAR A FUNÇÃO DE UPLOAD DE THEMAS (COMENTE A TAG FORM) -->
-                    <!--
+
                     <form action="{{ route('editTheme') }}" enctype="multipart/form-data" method="post">
                         @csrf
                         {{-- <h3>{{__('messages.Upload themes')}}</h3> --}}
@@ -152,7 +152,7 @@
                             <button class="btn btn-info download-themes" title="Download more themes"><a href="https://linkstack.org/themes/" target="_blank" class="text-white">{{__('messages.Download themes')}}</a></button>
                         </div>
                     </form>
-                    -->
+
                     </details>
                     </div>
                   </div>
